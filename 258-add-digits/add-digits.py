@@ -5,8 +5,8 @@ class Solution(object):
         :rtype: int
         """
         if num==0:
-            return num
-        elif num%9==0:
-            return 9
-        else:
-            return num%9
+            return 0
+        while(num>=10):
+                digit=num%10+num//10
+                num=digit
+        return num
