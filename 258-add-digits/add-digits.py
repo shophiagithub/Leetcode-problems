@@ -8,5 +8,5 @@ class Solution(object):
             return num
         elif num%9==0:
             return 9
-        elif num%9!=0:
+        else:
             return num%9
