@@ -5,12 +5,14 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        list1=list(s)
-        list2=list(t)
-        list1.sort()
-        list2.sort()
-        if(list1==list2):
-            return True
-        return False
+        flag=True
+        if len(s)!=len(t):
+            flag=False
+        letters="abcdefghijklmnopqrstuvwxyz"
+        for letter in letters:
+            if s.count(letter)!=t.count(letter):
+                flag=False
+                break
+        return flag
 
         
