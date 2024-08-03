@@ -7,18 +7,21 @@ class Solution(object):
         #empty=" "
         if s==" ":
             return True
-        punctuation=[',', ':', '!', '.', '?', ';', "'", '"', '(', ')', '[', ']', '{', '}', '-', '_', '@', '#', '$', '%', '^', '&', '*', '~', '`', '/', '\\']
-        for punc in punctuation:
-            if punc in s:
-                s=s.replace(punc,"")
-        new_s=s.replace(" ","").lower() 
-        a=len(new_s)-1
-        for i in range(len(new_s)): 
-            if(new_s[i]!=new_s[a]):
+        left=0
+        right=len(s)-1
+        while(left<right):
+            if not s[left].isalnum():
+                left+=1
+            elif not s[right].isalnum():
+                right-=1
+            elif s[left].lower()!=s[right].lower():
                 return False
-            a-=1
-        return True
-        
+            else:
+                left+=1
+                right-=1
+        return True 
+
+                        
 
 
 
