@@ -4,6 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        ans=0
         M={
             'I':1,
             'V':5,
@@ -11,15 +12,15 @@ class Solution(object):
             'L':50,
             'C':100,
             'D':500,
-            'M':1000
+            'M':1000    
         }
-        ans=0
         for i in range(len(s)):
             if i<len(s)-1 and M[s[i]]<M[s[i+1]]:
                 ans=ans-M[s[i]]
             else:
                 ans=ans+M[s[i]]
-        return ans
+        return ans 
+        
 
 
         
