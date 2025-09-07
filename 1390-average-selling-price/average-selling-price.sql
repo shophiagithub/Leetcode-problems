@@ -1,7 +1,5 @@
 # Write your MySQL query statement below
 SELECT p.product_id,
--- (CASE
--- WHEN u.units IS NULL AND u.product_id IS NULL THEN 0
 IFNULL(ROUND(SUM(u.units*p.price)/SUM(u.units),2),0)  AS average_price
 FROM Prices p
 LEFT JOIN UnitsSold u
